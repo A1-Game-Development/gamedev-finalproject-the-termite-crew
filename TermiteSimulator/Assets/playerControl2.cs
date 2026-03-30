@@ -12,7 +12,7 @@ public class playerControl2 : MonoBehaviour
     public float maxJumpDuration;  //typical 0.8
     public float speed;  //typical 480
     public float jumpForce;  //typical 2100
-    public bool grounded;  //no typical, only public for debugging
+    public bool grounded;  //not typical, only public for debugging
     private Rigidbody2D rigi;
     private bool facingRight;
     //counts number of times player has collided with ground object
