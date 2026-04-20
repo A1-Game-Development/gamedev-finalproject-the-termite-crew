@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    public float width;
-    public float height;
-    public float speed;
+    [Header("Bounds")]
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
+
+    [Header("Camera")]
+    public int speed;
 }
