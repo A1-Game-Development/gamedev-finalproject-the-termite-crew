@@ -21,11 +21,11 @@ public class CameraControl : MonoBehaviour
     {
         // motion = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         // transform.Translate(motion * movementSpeed * Time.deltaTime);
-        // transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+        // transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, -10);
 
-        transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+        transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, -10);
         // Mathf.Clamp(transform.position.x, maxX, minX);
         // Mathf.Clamp(transform.position.y, maxY, minY);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, maxX, minX), Mathf.Clamp(transform.position.y, maxY, minY), 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, maxX, minX), Mathf.Clamp(transform.position.y, maxY, minY), -10);
     }
 }
