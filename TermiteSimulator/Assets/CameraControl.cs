@@ -8,10 +8,6 @@ public class CameraControl : MonoBehaviour
     public float minY;
     public float maxY;
     
-    [Header("Input")]
-    public float horizontalInput = Input.GetAxis("Horizontal");
-    public float verticalInput = Input.GetAxis("Vertical");
-
     [Header("Camera")]
     public float movementSpeed;
     private Vector2 motion;
@@ -19,13 +15,10 @@ public class CameraControl : MonoBehaviour
 
     void LateUpdate()
     {
-        // motion = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        // transform.Translate(motion * movementSpeed * Time.deltaTime);
-        // transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, -10);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        transform.position = transform.position + new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, -10);
-        // Mathf.Clamp(transform.position.x, maxX, minX);
-        // Mathf.Clamp(transform.position.y, maxY, minY);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, maxX, minX), Mathf.Clamp(transform.position.y, maxY, minY), -10);
+        transform.position += new Vector3(horizontalInput * movementSpeed * Time.deltaTime, verticalInput * movementSpeed * Time.deltaTime, 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), Mathf.Clamp(transform.position.y, minY, maxY), -10);
     }
 }
